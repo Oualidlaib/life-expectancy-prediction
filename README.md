@@ -56,7 +56,7 @@ Country names in the scraped files are matched to the names used in the Life Exp
 Requires Python 3.9+.
 
 ```bash
-git clone https://github.com/<your-username>/life-expectancy-prediction.git
+git clone https://github.com/Oualidlaib/life-expectancy-prediction.git
 cd life-expectancy-prediction
 
 python -m venv .venv

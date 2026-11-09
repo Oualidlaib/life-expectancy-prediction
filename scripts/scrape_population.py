@@ -1,19 +1,4 @@
-"""Scrape yearly total population (2000-2015) for every country in the
-Life Expectancy dataset.
-
-Source: Perspective Monde (Université de Sherbrooke), which republishes the
-World Bank indicator SP.POP.TOTL. The site is driven by a <select> dropdown,
-so the page is automated with Selenium and parsed with BeautifulSoup.
-
-Run from anywhere:
-
-    python scripts/scrape_population.py
-
-Output: data/external/population_data.csv  (Country, Year, Population)
-
-Chrome is required. Selenium >= 4.6 downloads a matching chromedriver
-automatically; to use your own binary set CHROMEDRIVER_PATH.
-"""
+"""Scrape yearly total population (2000-2015) for every country in the Life Expectancy dataset."""
 
 import os
 import time
@@ -65,7 +50,7 @@ def parse_population_table(html: str) -> list[tuple[int, int]]:
     tds = soup.find("tbody", {"id": "listeDonnee"}).find_all("td")
 
     rows = []
-    # The table has 3 columns per row: year, population, (unused).
+    
     for i in range(0, len(tds), 3):
         year = int(tds[i].get_text(strip=True))
         population = tds[i + 1].get_text(strip=True).replace("\xa0", "").replace(" ", "")
@@ -80,7 +65,7 @@ def scrape_country(driver: webdriver.Chrome, country_name: str) -> list[tuple[st
     Select(select_element).select_by_value(COUNTRY_CODES[country_name])
 
     WebDriverWait(driver, 20).until(ec.presence_of_element_located((By.ID, "listeDonnee")))
-    time.sleep(2)  # the table reloads after the dropdown changes
+    time.sleep(2)  
 
     rows = parse_population_table(driver.page_source)
     return [

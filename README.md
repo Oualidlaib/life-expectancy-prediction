@@ -25,7 +25,7 @@ Country names in the scraped files are matched to the names used in the Life Exp
 
 **Coverage gaps.** Population is unavailable for 27 mostly small states (e.g. Maldives, Seychelles, Samoa, Monaco), and GDP for 6 countries (Cook Islands, Cuba, Côte d'Ivoire, North Korea, Monaco, Niue). Rows for these countries are dropped during cleaning.
 
-## What the notebook does
+## Notebook
 
 `notebooks/life_expectancy.ipynb`:
 

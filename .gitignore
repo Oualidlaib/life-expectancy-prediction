@@ -1,19 +1,1 @@
-# Python
-__pycache__/
-*.py[cod]
 .venv/
-venv/
-.env
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Selenium: platform- and Chrome-version-specific binaries; Selenium Manager fetches one for you
-chromedriver
-chromedriver.exe
-
-# OS / editor
-.DS_Store
-Thumbs.db
-.idea/
-.vscode/

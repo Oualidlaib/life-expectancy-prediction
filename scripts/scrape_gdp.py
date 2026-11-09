@@ -18,8 +18,7 @@ HEADERS = {
     )
 }
 
-# Position of the two tables on the page (0-indexed): 2000-2009 and 2010-2019.
-# NOTE: this is positional, so it breaks if Wikipedia reorders the page.
+# Position of the two tables on the page: 2000-2009 and 2010-2019.
 TABLE_2000S_INDEX = 3
 TABLE_2010S_INDEX = 4
 
@@ -28,7 +27,7 @@ YEARS_2000S = [str(y) for y in range(2000, 2010)]
 YEARS_2010S = [str(y) for y in range(2010, 2016)]
 ALL_YEARS = YEARS_2000S + YEARS_2010S
 
-# Wikipedia name -> name used in the Life Expectancy dataset.
+# Name used in the Life Expectancy dataset.
 NAME_FIXES = {
     "Bolivia": "Bolivia (Plurinational State of)",
     "Brunei": "Brunei Darussalam",
@@ -52,8 +51,7 @@ NAME_FIXES = {
     "Vietnam": "Viet Nam",
 }
 
-# Territories / entities that are not in the Life Expectancy dataset.
-# ("Ivory Coast" is dropped here too, so Côte d'Ivoire has no GDP rows.)
+# Entities that are not in the Life Expectancy dataset.
 EXCLUDED_COUNTRIES = [
     "Palestine", "Taiwan", "Puerto Rico", "Macau", "Liechtenstein",
     "Kosovo", "Hong Kong", "Ivory Coast", "Andorra", "Aruba",
